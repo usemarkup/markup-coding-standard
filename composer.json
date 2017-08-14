@@ -1,0 +1,8 @@
+{
+    "name": "markup/coding-standard",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.1",
+        "squizlabs/php_codesniffer": "^3.0",
+    }
+}
