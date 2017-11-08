@@ -38,4 +38,13 @@
             <property name="searchAnnotations" value="true"/>
         </properties>
     </rule>
+    
+    <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/Namespaces/UseDoesNotStartWithBackslashSniff.php"/>
+    <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/ReturnTypeHintSpacingSniff.php"/>
+    <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/TypeHints/ParameterTypeHintSpacingSniff.php"/>
+    <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/Commenting/ForbiddenAnnotationsSniff.php">
+        <properties>
+            <property name="forbiddenAnnotations" type="array" value="@package, @author, @copyright, @license, @version, @created"/>
+        </properties>
+    </rule>
 </ruleset>
