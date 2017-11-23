@@ -3,7 +3,6 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1",
-        "phplint/phplint": "@stable",
         "phpstan/phpstan-shim": "@stable",
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
