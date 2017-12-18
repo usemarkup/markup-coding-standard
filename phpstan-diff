@@ -2,6 +2,9 @@
 
 # This allows you to run new files at the highest level against phpstan
 
+# ensure we have the latest master
+git fetch --force origin "master"
+
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 NEW_FILES=$(git diff --color --name-only --diff-filter=A origin/master $CURRENT_BRANCH | grep ".php")
 COMMAND="bin/phpstan.phar analyse -c phpstan.neon -l 7 "
