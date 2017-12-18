@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This allows you to run new files at the highest level against phpstan
+
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+NEW_FILES=$(git diff --color --name-only --diff-filter=A master $CURRENT_BRANCH | grep ".php")
+COMMAND="bin/phpstan.phar analyse -c phpstan.neon -l 7 "
+
+while read -r FILE; do
+    echo $FILE
+
+    if [ "$FILE" != "" ]
+    then
+        COMMAND="$COMMAND \"$FILE\" "
+    fi
+done <<< "$NEW_FILES"
+
+eval $COMMAND
