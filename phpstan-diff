@@ -9,6 +9,11 @@ CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 NEW_FILES=$(git diff --color --name-only --diff-filter=A origin/master $CURRENT_BRANCH | grep ".php")
 COMMAND="bin/phpstan.phar analyse -c phpstan.neon -l 7 "
 
+if [ "$CURRENT_BRANCH" == "master" ]
+then
+    return 0;
+fi
+
 while read -r FILE; do
     echo $FILE
 
