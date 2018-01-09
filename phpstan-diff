@@ -8,19 +8,24 @@ git fetch --force origin "master"
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 NEW_FILES=$(git diff --color --name-only --diff-filter=A origin/master $CURRENT_BRANCH | grep ".php")
 COMMAND="bin/phpstan.phar analyse -c phpstan.neon -l 7 "
+NEEDS_TO_RUN=0
 
 if [ "$CURRENT_BRANCH" == "master" ]
 then
-    return 0;
+    exit 0
 fi
 
 while read -r FILE; do
     echo $FILE
 
-    if [ "$FILE" != "" ]
+    if [ -n "$FILE" ]
     then
+        NEEDS_TO_RUN=1
         COMMAND="$COMMAND \"$FILE\" "
     fi
 done <<< "$NEW_FILES"
 
-eval $COMMAND
+if [ $NEEDS_TO_RUN -eq 1 ]
+then
+    eval $COMMAND
+fi
