@@ -14,6 +14,9 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
         # Doctrine Common Collections is allowed in the namespace
         'Doctrine\Common\Collections',
+        
+        # To be amended at a later stage
+        'SimpleBus\\',
     ];
 
     /**
