@@ -13,8 +13,8 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         'Next\\Domain\\Common',
 
         # Doctrine Common Collections is allowed in the namespace
-        'Doctrine\Common\Collections',
-        
+        'Doctrine\\Common\\Collections',
+
         # To be amended at a later stage
         'SimpleBus\\',
     ];
@@ -25,7 +25,7 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
     public function register()
     {
         return [
-            T_OPEN_TAG
+            T_OPEN_TAG,
         ];
     }
 
@@ -42,7 +42,11 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
         $currentDomain = null;
 
-        if (preg_match(sprintf('/%s(.*?)\/./i', addcslashes(self::DOMAIN_LAYER_PATH, '/')), $phpcsFile->getFilename(), $matches) !== false) {
+        if (preg_match(
+                sprintf('/%s(.*?)\/./i', addcslashes(self::DOMAIN_LAYER_PATH, '/')),
+                $phpcsFile->getFilename(),
+                $matches
+            ) !== false) {
             if (!empty($matches)) {
                 $currentDomain = end($matches);
             }
@@ -55,7 +59,7 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         $useStatements = UseStatementHelper::getUseStatements($phpcsFile, $openTagPointer);
 
         $whitelist = self::WHITELIST_NAMESPACES;
-        $whitelist[] = $currentDomain;
+        $whitelist[] = sprintf('\\Domain\\%s', $currentDomain);
 
         /** @var UseStatement $useStatement */
         foreach ($useStatements as $useStatement) {
@@ -63,6 +67,7 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
             foreach ($whitelist as $namespace) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), $namespace) !== false) {
+                    var_dump($useStatement->getFullyQualifiedTypeName());
                     $found = true;
                 }
             }
