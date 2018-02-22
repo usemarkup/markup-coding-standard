@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Markup\Sniffs;
+namespace Markup\Sniffs\Next;
 
 use SlevomatCodingStandard\Helpers\UseStatement;
 use SlevomatCodingStandard\Helpers\UseStatementHelper;
