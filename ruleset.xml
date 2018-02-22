@@ -48,4 +48,6 @@
             <property name="forbiddenAnnotations" type="array" value="@package, @author, @copyright, @license, @version, @created"/>
         </properties>
     </rule>
+
+    <rule ref="Sniffs/Doctrine/EntityManagerSniff.php"/>
 </ruleset>
