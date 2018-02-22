@@ -49,5 +49,5 @@
         </properties>
     </rule>
 
-    <rule ref="Sniffs/Doctrine/EntityManagerSniff.php"/>
+    <rule ref="vendor/markup/coding-standard/Sniffs/Doctrine/EntityManagerSniff.php"/>
 </ruleset>
