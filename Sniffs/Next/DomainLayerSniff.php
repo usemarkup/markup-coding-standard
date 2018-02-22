@@ -67,7 +67,6 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
             foreach ($whitelist as $namespace) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), $namespace) !== false) {
-                    var_dump($useStatement->getFullyQualifiedTypeName());
                     $found = true;
                 }
             }
