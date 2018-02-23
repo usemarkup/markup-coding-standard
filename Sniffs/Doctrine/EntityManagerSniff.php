@@ -32,7 +32,7 @@ class EntityManagerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
                 }
 
                 if (stripos($argumentType->getTypeHint(), 'EntityManager') !== false) {
-                    $phpcsFile->addWarning(
+                    $phpcsFile->addError(
                         sprintf(
                             'Using the EntityManager via the constructor can be problematic, using the ManagerRegistry is advised'
                         ),
