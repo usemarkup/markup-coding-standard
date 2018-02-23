@@ -36,7 +36,7 @@ class PreventInheritanceOfDoctrineSniff implements \PHP_CodeSniffer\Sniffs\Sniff
                     'extending EntityRepository exposes Doctrine, this isn\'t ideal or recommended, seek advice.'
                 ),
                 $openTagPointer,
-                __CLASS__
+                'EntityRepositoryFound'
             );
         }
     }

@@ -1,13 +1,6 @@
 {
     "name": "markup/coding-standard",
     "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Markup\\Sniffs\\": [
-                "Sniffs/"
-            ]
-        }
-    },
     "require": {
         "php": ">=7.1",
         "phpstan/phpstan-shim": "@stable",

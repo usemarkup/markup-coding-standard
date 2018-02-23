@@ -46,7 +46,7 @@ class ApplicationLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
                             $useStatement->getFullyQualifiedTypeName()
                         ),
                         $openTagPointer,
-                        __CLASS__
+                        'ApplicationReference'
                     );
                 }
             }

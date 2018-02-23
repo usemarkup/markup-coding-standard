@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="phoenix">
+<ruleset name="Markup">
     <description>Markup Coding Standard</description>
 
     <arg name="tab-width" value="4"/>

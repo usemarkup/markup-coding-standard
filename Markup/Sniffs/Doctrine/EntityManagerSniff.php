@@ -37,7 +37,7 @@ class EntityManagerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
                             'Using the EntityManager via the constructor can be problematic, using the ManagerRegistry is advised'
                         ),
                         $openTagPointer,
-                        __CLASS__
+                        'EntityManagerFound'
                     );
                 }
             }

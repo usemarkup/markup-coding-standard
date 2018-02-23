@@ -85,7 +85,7 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
                         $useStatement->getFullyQualifiedTypeName()
                     ),
                     $openTagPointer,
-                    __CLASS__
+                    'OutsideReference'
                 );
             }
         }
