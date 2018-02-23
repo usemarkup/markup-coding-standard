@@ -33,7 +33,7 @@ class PreventInheritanceOfDoctrineSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         if (!empty($parents) && in_array(EntityRepository::class, $parents)) {
             $phpcsFile->addError(
                 sprintf(
-                    'extending EntityRepository exposes Doctrine, this isn\'t ideal or recommended, seek advice.'
+                    'Extending EntityRepository exposes Doctrine, and isn\'t recommended - see https://usemarkup.github.io/markup-guidelines/doctrine/creating-a-new-entity/#creating-a-repository'
                 ),
                 $openTagPointer,
                 'EntityRepositoryFound'
