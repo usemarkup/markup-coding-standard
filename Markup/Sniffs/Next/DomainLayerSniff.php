@@ -17,6 +17,9 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
         # To be amended at a later stage
         'SimpleBus\\',
+        
+        # Only allowed in Domain\Common
+        'Knp\\DoctrineBehaviors\\Model\\Translatable',
     ];
 
     /**
