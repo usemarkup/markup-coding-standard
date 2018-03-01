@@ -62,15 +62,17 @@ class PreventExposingDomainSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         foreach ($this->useStatements[$filename] as $useStatement) {
             if (stripos($useStatement->getFullyQualifiedTypeName(), $type->getTypeHint()) !== false) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), 'Next\Domain\\') !== false) {
-                    $phpcsFile->addError(
-                        sprintf(
-                            'Application code %s should not be exposing domain layer code %s',
-                            $class,
-                            $useStatement->getFullyQualifiedTypeName()
-                        ),
-                        $openTagPointer,
-                        'DomainBeingExposed'
-                    );
+                    if (stripos($class, 'Next\Application\\') == true) {
+                        $phpcsFile->addError(
+                            sprintf(
+                                'Application code %s should not be exposing domain layer code %s',
+                                $class,
+                                $useStatement->getFullyQualifiedTypeName()
+                            ),
+                            $openTagPointer,
+                            'DomainBeingExposed'
+                        );
+                    }
                 }
             }
         }
