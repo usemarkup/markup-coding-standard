@@ -6,6 +6,6 @@
         "phpstan/phpstan-shim": "@stable",
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
-        "slevomat/coding-standard": "@stable"
+        "slevomat/coding-standard": "4.4.8"
     }
 }
