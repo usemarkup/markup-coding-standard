@@ -11,6 +11,7 @@ class ApplicationLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
     private const PROHIBITED_NAMESPACES = [
         'Doctrine\\Orm',
+        'Doctrine\Common\Persistence',
     ];
 
     /**
