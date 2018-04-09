@@ -10,26 +10,42 @@
         Mess Ruleset for Markup
     </description>
 
-    <rule ref="rulesets/codesize.xml">
-        <exclude name="ExcessiveParameterList" />
+    <!-- Design -->
+    <rule ref="rulesets/design.xml/GotoStatement"/>
+    <rule ref="rulesets/design.xml/EvalExpression"/>
+    <rule ref="rulesets/design.xml/DepthOfInheritance">
+        <properties>
+            <property name="minimum" value="3" />
+        </properties>
     </rule>
-    <rule ref="rulesets/controversial.xml" />
-
     <rule ref="rulesets/design.xml/CouplingBetweenObjects">
         <properties>
             <property name="minimum" value="21" />
         </properties>
     </rule>
 
+    <rule ref="rulesets/codesize.xml">
+        <exclude name="ExcessiveParameterList" />
+    </rule>
+
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="BooleanArgumentFlag" />
+        <exclude name="StaticAccess" />
+    </rule>
+
+    <rule ref="rulesets/controversial.xml" />
+
+    <!-- Naming -->
     <rule ref="rulesets/naming.xml/LongVariable">
         <properties>
             <property name="maximum" value="35" />
         </properties>
     </rule>
+    <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass" />
+    <rule ref="rulesets/naming.xml/BooleanGetMethodName" />
 
-    <rule ref="rulesets/unusedcode.xml">
-        <exclude name="UnusedFormalParameter" />
-    </rule>
+    <!-- Unused -->
+    <rule ref="rulesets/unusedcode.xml"/>
 
     <exclude-pattern>src/*/Tests/*</exclude-pattern>
     <exclude-pattern>src/*/Test/*</exclude-pattern>
