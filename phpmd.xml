@@ -26,6 +26,13 @@
 
     <rule ref="rulesets/codesize.xml">
         <exclude name="ExcessiveParameterList" />
+        <exclude name="TooManyPublicMethods" />
+    </rule>
+
+    <rule ref="rulesets/codesize.xml/TooManyPublicMethods">
+        <properties>
+            <property name="maxmethods" value="14" />
+        </properties>
     </rule>
 
     <rule ref="rulesets/cleancode.xml">
@@ -39,14 +46,18 @@
     <rule ref="rulesets/naming.xml/LongVariable">
         <properties>
             <property name="maximum" value="35" />
+
         </properties>
     </rule>
     <rule ref="rulesets/naming.xml/ConstructorWithNameAsEnclosingClass" />
     <rule ref="rulesets/naming.xml/BooleanGetMethodName" />
 
     <!-- Unused -->
-    <rule ref="rulesets/unusedcode.xml"/>
+    <rule ref="rulesets/unusedcode.xml">
+        <exclude name="UnusedFormalParameter" />
+    </rule>
 
     <exclude-pattern>src/*/Tests/*</exclude-pattern>
     <exclude-pattern>src/*/Test/*</exclude-pattern>
+    <exclude-pattern>*Extension.php</exclude-pattern>
 </ruleset>
