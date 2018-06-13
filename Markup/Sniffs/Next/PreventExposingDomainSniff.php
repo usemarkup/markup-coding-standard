@@ -60,6 +60,10 @@ class PreventExposingDomainSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 
         /** @var UseStatement $useStatement */
         foreach ($this->useStatements[$filename] as $useStatement) {
+            if (!class_exists($type->getTypeHint())) {
+                continue;
+            }
+
             if (stripos($useStatement->getFullyQualifiedTypeName(), $type->getTypeHint()) !== false) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), 'Next\Domain\\') !== false) {
                     if (stripos($class, 'Next\Application\\') == true) {
