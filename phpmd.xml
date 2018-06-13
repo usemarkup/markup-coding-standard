@@ -15,7 +15,7 @@
     <rule ref="rulesets/design.xml/EvalExpression"/>
     <rule ref="rulesets/design.xml/DepthOfInheritance">
         <properties>
-            <property name="minimum" value="3" />
+            <property name="minimum" value="4" />
         </properties>
     </rule>
     <rule ref="rulesets/design.xml/CouplingBetweenObjects">
