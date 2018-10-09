@@ -38,6 +38,9 @@
             <property name="spacingBeforeFirst" value="0" />
         </properties>
     </rule>
+    <rule ref="Markup.Usage.NamespaceOverwritten.BlacklistedNamespace">
+        <type>error</type>
+    </rule>
 
     <!-- Remove unused use statements -->
     <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/Namespaces/UnusedUsesSniff.php">
