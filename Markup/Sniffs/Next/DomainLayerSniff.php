@@ -23,6 +23,9 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         
         # Allow Collection Component
         'Next\\Component\\Collection',
+        
+        # Allow symfony Event()
+        'Symfony\\Component\\EventDispatcher\\Event',
     ];
 
     /**
