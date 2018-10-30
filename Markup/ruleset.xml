@@ -39,7 +39,7 @@
         </properties>
     </rule>
     <rule ref="Markup.Usage.NamespaceOverwritten.BlacklistedNamespace">
-        <type>error</type>
+        <type>warning</type>
     </rule>
 
     <!-- Remove unused use statements -->
