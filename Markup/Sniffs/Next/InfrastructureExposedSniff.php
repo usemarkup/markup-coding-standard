@@ -7,6 +7,7 @@ use SlevomatCodingStandard\Helpers\UseStatementHelper;
 
 class InfrastructureExposedSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 {
+    private const NEXT_PATH = 'src/Next/';
     private const INFRASTRUCTURE_LAYER_PATH = 'src/Next/Infrastructure/';
     private const INFRASTRUCTURE_NS = 'Next\Infrastructure';
 
@@ -27,6 +28,10 @@ class InfrastructureExposedSniff implements \PHP_CodeSniffer\Sniffs\Sniff
      */
     public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $openTagPointer)
     {
+        if (stripos($phpcsFile->getFilename(), self::NEXT_PATH) === false) {
+            return;
+        }
+
         if (stripos($phpcsFile->getFilename(), self::INFRASTRUCTURE_LAYER_PATH) !== false) {
             return;
         }
