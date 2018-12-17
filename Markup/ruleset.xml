@@ -42,6 +42,16 @@
         <type>error</type>
     </rule>
 
+    <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
+    <rule ref="Generic.Arrays.ArrayIndent"/>
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+
     <!-- Remove unused use statements -->
     <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/Sniffs/Namespaces/UnusedUsesSniff.php">
         <properties>
