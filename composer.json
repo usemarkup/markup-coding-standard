@@ -8,5 +8,8 @@
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
         "slevomat/coding-standard": "@stable"
+    },
+    "provide": {
+        "phpstan/phpstan": "*"
     }
 }
