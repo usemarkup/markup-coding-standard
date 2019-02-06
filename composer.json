@@ -3,13 +3,10 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1",
-        "phpstan/phpstan-shim": "*",
+        "phpstan/phpstan-shim": "@stable",
         "phpstan/phpstan-strict-rules": "@stable",
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
         "slevomat/coding-standard": "<5.0.0"
-    },
-    "provide": {
-        "phpstan/phpstan": "*"
     }
 }
