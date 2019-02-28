@@ -18,6 +18,8 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         # To be amended at a later stage
         'SimpleBus\\',
         
+        'Psr\\Log\\',
+        
         # Allow Pagination Component
         'Next\\Component\\Pagination',
         
