@@ -38,7 +38,7 @@ class ApplicationLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         $useStatements = UseStatementHelper::getUseStatements($phpcsFile, $openTagPointer);
 
         /** @var UseStatement $useStatement */
-        foreach ($useStatements as $useStatement) {
+        foreach (array_shift($useStatements) ?? [] as $useStatement) {
             foreach (self::PROHIBITED_NAMESPACES as $namespace) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), $namespace) !== false) {
                     $phpcsFile->addError(

@@ -36,10 +36,10 @@ class InfrastructureExposedSniff implements \PHP_CodeSniffer\Sniffs\Sniff
             return;
         }
 
-        $useStatements = UseStatementHelper::getUseStatements($phpcsFile, $openTagPointer);
+        $useStatements = UseStatementHelper::getFileUseStatements($phpcsFile);
 
         /** @var UseStatement $useStatement */
-        foreach ($useStatements as $useStatement) {
+        foreach (array_shift($useStatements) ?? [] as $useStatement) {
             if (stripos($useStatement->getFullyQualifiedTypeName(), self::INFRASTRUCTURE_NS) !== false) {
                 $phpcsFile->addError(
                     sprintf(

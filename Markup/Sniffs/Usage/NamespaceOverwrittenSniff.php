@@ -5,6 +5,7 @@ namespace Markup\Sniffs\Usage;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use SlevomatCodingStandard\Helpers\UseStatementHelper;
+use Symfony\Component\VarDumper\VarDumper;
 
 class NamespaceOverwrittenSniff implements Sniff
 {
@@ -31,9 +32,9 @@ class NamespaceOverwrittenSniff implements Sniff
      */
     public function process(File $phpcsFile, $openTagPointer)
     {
-        $useStatements = UseStatementHelper::getUseStatements($phpcsFile, $openTagPointer);
+        $useStatements = UseStatementHelper::getFileUseStatements($phpcsFile);
 
-        foreach ($useStatements as $useStatement) {
+        foreach (array_shift($useStatements) ?? [] as $useStatement) {
             foreach (self::BLACKLIST_NAMESPACES as $namespace) {
                 if (stripos($useStatement->getFullyQualifiedTypeName(), $namespace['namespace']) !== false) {
                     $phpcsFile->addError(

@@ -73,7 +73,7 @@ class DomainLayerSniff implements \PHP_CodeSniffer\Sniffs\Sniff
         $whitelist[] = sprintf('\\Domain\\%s', $currentDomain);
 
         /** @var UseStatement $useStatement */
-        foreach ($useStatements as $useStatement) {
+        foreach (array_shift($useStatements) ?? [] as $useStatement) {
             $found = false;
 
             foreach ($whitelist as $namespace) {
