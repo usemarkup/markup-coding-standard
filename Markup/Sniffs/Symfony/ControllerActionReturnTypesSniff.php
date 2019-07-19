@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Markup\Sniffs\Next;
+namespace Markup\Sniffs\Symfony;
 
 use SlevomatCodingStandard\Helpers\FunctionHelper;
 
