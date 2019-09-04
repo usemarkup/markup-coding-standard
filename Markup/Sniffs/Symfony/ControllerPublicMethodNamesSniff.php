@@ -53,10 +53,10 @@ class ControllerPublicMethodNamesSniff implements \PHP_CodeSniffer\Sniffs\Sniff
             return;
         }
 
-        if (substr($name, -6) !== 'Action') {
+        if (substr($name, -6) === 'Action') {
             $phpcsFile->addError(
                 sprintf(
-                    'Controller public function name(%s) must end in *Action ', $name
+                    'Controller public function name(%s) must not end in *Action ', $name
                 ),
                 $openTagPointer,
                 'SymfonyControllerPublicMethodName'
