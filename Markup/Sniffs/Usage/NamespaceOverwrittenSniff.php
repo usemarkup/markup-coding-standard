@@ -5,14 +5,17 @@ namespace Markup\Sniffs\Usage;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use SlevomatCodingStandard\Helpers\UseStatementHelper;
-use Symfony\Component\VarDumper\VarDumper;
 
-class NamespaceOverwrittenSniff implements Sniff
+class NamespaceBlacklistedSniff implements Sniff
 {
     private const BLACKLIST_NAMESPACES = [
         [
             'namespace' => 'Knp\\DoctrineBehaviors\\Model\\Timestampable\\Timestampable',
             'require_use' => 'Phoenix\\Common\\Database\\Doctrine\\Entity\\Timestampable',
+        ],
+        [
+            'namespace' => 'Symfony\\Bridge\\Doctrine\\ManagerRegistry',
+            'require_use' => 'Doctrine\\Common\\Persistence\\ManagerRegistry',
         ],
     ];
 
@@ -39,7 +42,7 @@ class NamespaceOverwrittenSniff implements Sniff
                 if (stripos($useStatement->getFullyQualifiedTypeName(), $namespace['namespace']) !== false) {
                     $phpcsFile->addError(
                         sprintf(
-                            "Class %s is overwritten, use %s instead",
+                            "Class %s is blacklisted, use %s instead",
                             $useStatement->getFullyQualifiedTypeName(),
                             $namespace['require_use']
                         ),
