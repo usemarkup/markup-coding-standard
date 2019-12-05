@@ -7,9 +7,6 @@
         "phpstan/phpstan-strict-rules": "@stable",
         "phpmd/phpmd": "^2.7",
         "squizlabs/php_codesniffer": "@stable",
-        "slevomat/coding-standard": "@stable"
-    },
-    "conflicts": {
-        "slevomat/coding-standard": ">5"
+        "slevomat/coding-standard": "<6"
     }
 }
