@@ -10,6 +10,6 @@
         "slevomat/coding-standard": "@stable"
     },
     "conflicts": {
-        "slevomat/coding-standard": "^6.0"
+        "slevomat/coding-standard": ">5"
     }
 }
