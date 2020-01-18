@@ -3,7 +3,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1",
-        "phpstan/phpstan-shim": "@stable",
+        "phpstan/phpstan": "@stable",
         "phpstan/phpstan-strict-rules": "@stable",
         "phpmd/phpmd": "^2.7",
         "squizlabs/php_codesniffer": "@stable",
