@@ -14,7 +14,6 @@
     <rule ref="PEAR.Functions.ValidDefaultValue"/>
     <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
     <rule ref="Squiz.Functions.GlobalFunction"/>
-    <rule ref="Squiz.Strings.ConcatenationSpacing" />
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="PSR2.Files.EndFileNewline"/>
@@ -42,7 +41,6 @@
         <type>error</type>
     </rule>
 
-    <rule ref="PEAR.ControlStructures.MultiLineCondition"/>
     <rule ref="Generic.Arrays.ArrayIndent"/>
     <rule ref="Squiz.WhiteSpace.FunctionSpacing">
         <properties>
