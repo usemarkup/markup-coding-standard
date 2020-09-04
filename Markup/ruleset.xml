@@ -37,7 +37,7 @@
             <property name="spacingBeforeFirst" value="0" />
         </properties>
     </rule>
-    <rule ref="Markup.Usage.NamespaceBlacklistedSniff">
+    <rule ref="Markup.Usage.NamespaceBlacklisted.BlacklistedNamespace">
         <type>error</type>
     </rule>
 
