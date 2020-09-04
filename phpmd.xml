@@ -40,6 +40,7 @@
         <exclude name="StaticAccess" />
         <exclude name="MissingImport" />
         <exclude name="UndefinedVariable" />
+        <exclude name="ErrorControlOperator" />
     </rule>
 
     <rule ref="rulesets/controversial.xml" />
