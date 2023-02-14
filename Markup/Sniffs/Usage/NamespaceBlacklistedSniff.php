@@ -35,7 +35,11 @@ class NamespaceBlacklistedSniff implements Sniff
      */
     public function process(File $phpcsFile, $openTagPointer)
     {
-        $useStatements = UseStatementHelper::getFileUseStatements($phpcsFile);
+        if (method_exists(UseStatementHelper::class, 'getUseStatements')) {
+            $useStatements = UseStatementHelper::getUseStatements($phpcsFile, $openTagPointer);
+        } else {
+            $useStatements = UseStatementHelper::getFileUseStatements($phpcsFile);
+        }
 
         foreach (array_shift($useStatements) ?? [] as $useStatement) {
             foreach (self::BLACKLIST_NAMESPACES as $namespace) {
